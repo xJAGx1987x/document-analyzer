@@ -1,0 +1,16 @@
+# Build folders
+build/
+dist/
+
+# PyInstaller artifacts
+*.spec
+
+# Log files
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+*.bat
+*.pyc
