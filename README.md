@@ -163,6 +163,8 @@ This project uses the following icon:
 
 - ![Technology Icon](assets/icons8-technology-100.ico)
   ![Technology Icon](assets/icons8-technology-100.png)
+
+  
   [Technology](https://icons8.com/icon/1581/electronics) icon by [Icons8](https://icons8.com)
 
 ---
