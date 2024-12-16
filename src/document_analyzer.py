@@ -2,7 +2,7 @@ import sys
 import os
 import customtkinter as ctk
 from tkinter import filedialog, messagebox
-from src.meta_extractor import analyze_text, export_results
+from meta_extractor import analyze_text, export_results
 
 
 def show_popup(title, message, file_name=None, is_error=False):
