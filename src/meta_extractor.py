@@ -12,19 +12,6 @@ from textstat import textstat
 from docx import Document
 from bs4 import BeautifulSoup  # For HTML file parsing
 
-# Ensure NLTK data is available
-try:
-    nltk.download('punkt', quiet=True)
-    nltk.download('stopwords', quiet=True)
-except Exception as e:
-    print(f"Error downloading NLTK data: {e}")
-    sys.exit(1)
-
-# Set up logging for errors
-logging.basicConfig(filename='analysis.log', level=logging.ERROR,
-                    format='%(asctime)s - %(levelname)s - %(message)s')
-
-
 def syllable_count(word):
     """Estimate syllable count for a word."""
     vowels = "aeiouy"
