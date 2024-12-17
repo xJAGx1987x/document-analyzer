@@ -4,6 +4,7 @@ import customtkinter as ctk
 from tkinter import filedialog, messagebox
 from meta_extractor import analyze_text, export_results
 
+last_result = None 
 
 def show_popup(title, message, file_name=None, is_error=False):
     """Create a pop-up window to display analysis results or error messages."""
