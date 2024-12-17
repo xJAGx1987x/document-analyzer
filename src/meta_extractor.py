@@ -3,51 +3,14 @@ import os
 import logging
 from collections import Counter
 
-missing_libraries = []
-
-try:
-    import nltk
-except ImportError:
-    missing_libraries.append("nltk")
-
-try:
-    import customtkinter as ctk
-except ImportError:
-    missing_libraries.append("customtkinter")
-
-try:
-    import PyPDF2
-except ImportError:
-    missing_libraries.append("PyPDF2")
-
-try:
-    import pypandoc
-except ImportError:
-    missing_libraries.append("pypandoc")
-
-try:
-    from textstat import textstat
-except ImportError:
-    missing_libraries.append("textstat")
-
-try:
-    from docx import Document
-except ImportError:
-    missing_libraries.append("python-docx")
-
-try:
-    from bs4 import BeautifulSoup  # For HTML file parsing
-except ImportError:
-    missing_libraries.append("beautifulsoup4")
-
-# Check for missing libraries
-if missing_libraries:
-    print("Error: The following libraries are missing:")
-    for lib in missing_libraries:
-        print(f"  - {lib}")
-    print("\nPlease install the missing libraries using the following command:")
-    print("  pip install " + " ".join(missing_libraries))
-    sys.exit(1)
+# Core libraries (assumed available in the packaged .exe)
+import nltk
+import customtkinter as ctk
+import PyPDF2
+import pypandoc
+from textstat import textstat
+from docx import Document
+from bs4 import BeautifulSoup  # For HTML file parsing
 
 # Ensure NLTK data is available
 try:

@@ -110,9 +110,6 @@ label.pack(pady=10)
 analyze_button = ctk.CTkButton(root, text="Analyze a File", command=analyze_file, fg_color="blue")
 analyze_button.pack(pady=20)
 
-export_button = ctk.CTkButton(root, text="Export Last Results", command=export_last_results, fg_color="green")
-export_button.pack(pady=10)
-
 quit_button = ctk.CTkButton(root, text="Quit", command=root.quit, fg_color="red")
 quit_button.pack(pady=10)
 
