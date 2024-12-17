@@ -28,18 +28,26 @@ def show_popup(title, message, file_name=None, is_error=False):
     text_box.configure(state="disabled")
 
     def save_results():
-        output_file = filedialog.asksaveasfilename(
-            title="Save Results As",
-            defaultextension=".txt",
-            filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
-        )
-        if output_file:
-            try:
-                with open(output_file, 'w', encoding='utf-8') as file:
-                    file.write(message)
-                messagebox.showinfo("Success", f"Results saved to {output_file}")
-            except Exception as e:
-                messagebox.showerror("Error", f"Could not save results: {str(e)}")
+        """Save results to a file if the Text area is not empty."""
+        # Ensure the text box has content before proceeding
+        content = text_box.get("1.0", "end").strip()  # Get text and remove whitespace
+        if content:  # Check if there's any content
+            output_file = filedialog.asksaveasfilename(
+                title="Save Results As",
+                defaultextension=".txt",
+                filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
+            )
+            if output_file:
+                try:
+                    with open(output_file, 'w', encoding='utf-8') as file:
+                        file.write(content)  # Write the content to the file
+                    messagebox.showinfo("Success", f"Results saved to {output_file}")
+                except Exception as e:
+                    messagebox.showerror("Error", f"Could not save results: {str(e)}")
+        else:
+            # Show a message if the text box is empty
+            messagebox.showinfo("No Content", "The results area is empty. Nothing to save.")
+
 
     save_button = ctk.CTkButton(popup, text="Save Results", command=save_results, fg_color="green")
     save_button.pack(pady=5)
